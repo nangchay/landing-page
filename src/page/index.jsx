@@ -3,12 +3,14 @@ import './index.css';
 import { useState, useEffect, useRef } from 'react';
 import ValueSection from './components/ValueSection/ValueSection';
 import FAQs from './components/FAQs/FAQs';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { useMediaQuery } from '@react-hook/media-query';
 
 const Navigation = () => {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const isMobile = useMediaQuery('(max-width: 640px)');
 
   const controlNavbar = () => {
     if (window.scrollY > lastScrollY) {
@@ -74,16 +76,16 @@ const Navigation = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <div ref={navRef} className={`fixed top-0 w-full bg-white z-50 transition-transform duration-300 ${show ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
-      <div className='flex w-[1107px] justify-between items-center flex-nowrap relative z-[18] mt-[33px] mr-0 mb-0 ml-[87px]'>
+    <div ref={navRef} className={`fixed top-0 max-w-[1620px] bg-white z-50 transition-transform duration-300 ${show ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
+      <div className={`flex w-[1620px] justify-around items-center flex-nowrap relative z-[18] mt-[33px] mb-0 mx-auto`}>
         <div className='flex w-[362px] gap-[4px] items-center shrink-0 flex-nowrap relative z-[19]'>
-          <div className='w-[78px] h-[62.156px] shrink-0 bg-[url(../assets/images/778cf297-6bcc-4a0d-8a0d-5c109e912e73.png)] bg-cover bg-no-repeat rounded-[13px] relative z-20' />
+          <div className={`${isMobile ? 'w-[128px] h-[102px]' : 'w-[78px] h-[62.156px]'} shrink-0 bg-[url(../assets/images/778cf297-6bcc-4a0d-8a0d-5c109e912e73.png)] bg-cover bg-no-repeat rounded-[13px] relative z-20`} />
           <div className="w-[280px] shrink-0 font-['SVN-Averia_Serif_Libre'] text-[20px] font-bold leading-[25.547px] relative text-left whitespace-nowrap z-[21]">
-            <a href='./' className="font-['SVN-Averia_Serif_Libre'] text-[20px] font-bold leading-[25.547px] text-[#6b8439] relative text-left">
+            <a href='./' className={`font-['SVN-Averia_Serif_Libre'] ${isMobile ? 'text-[40px]' : 'text-[20px]'} font-bold leading-[25.547px] text-[#6b8439] relative text-left`}>
               Nàng Chay
               <br />
             </a>
-            <span className="font-['SVN-Averia_Serif_Libre'] text-[16px] font-normal leading-[25.547px] text-[#707070] relative text-left">
+            <span className={`font-['SVN-Averia_Serif_Libre'] ${isMobile ? 'text-[32px]' : 'text-[16px]'} font-normal leading-[25.547px] text-[#707070] relative text-left`}>
               <em>Sản phẩm thuần chay</em>
             </span>
           </div>
@@ -108,31 +110,36 @@ const Navigation = () => {
         </div>
         <div className='md:hidden'>
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className='text-[#707070] hover:text-[#6b8439] focus:outline-none'>
-            <svg className="w20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              {isMobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-              )}
+            <svg className="w24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </button>
         </div>
       </div>
-      {isMobileMenuOpen && (
-        <div className='md:hidden absolute top-30 left-0 w-full bg-[#f8f4e3] shadow-lg z-40 transition-transform duration-300 transform translate-y-2'>
-          <div className="flex flex-col space-y-6 text-center w-full px-4">
-            <a href="#main" onClick={(e) => smoothScroll(e, 'main')} className={`font-['SVN-Averia_Serif_Libre'] block px-4 py-2 text-[24px] ${activeTab === 'main' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>Main</a>
-            <a href="#about" onClick={(e) => smoothScroll(e, 'about')} className={`font-['SVN-Averia_Serif_Libre'] block px-4 py-2 text-[24px] ${activeTab === 'about' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>About</a>
-            <a href="#value" onClick={(e) => smoothScroll(e, 'value')} className={`font-['SVN-Averia_Serif_Libre'] block px-4 py-2 text-[24px] ${activeTab === 'value' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>Value</a>
-            <a href="#faqs" onClick={(e) => smoothScroll(e, 'faqs')} className={`font-['SVN-Averia_Serif_Libre'] block px-4 py-2 text-[24px] ${activeTab === 'faqs' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>FAQs</a>
-          </div>
+      <div
+        className={`md:hidden fixed top-120 right-0 h-full w-[90vw] max-w-[300px] shadow-lg z-40 transition-transform duration-500 transform ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+      >
+        <div className="flex flex-col space-y-6 text-left w-full px-4 py-6 overflow-x-auto max-h-[calc(100vh-120px)] bg-[#f8f4e3] rounded-md">
+          {['main', 'about', 'value', 'faqs'].map((section) => (
+            <a
+              key={section}
+              href={`#${section}`}
+              onClick={(e) => smoothScroll(e, section)}
+              className={`font-['SVN-Averia_Serif_Libre'] block px-4 py-4 text-[36px] ${activeTab === section ? 'text-[#6b8439]' : 'text-[#323232]'} hover:text-[#6b8439] transition-colors duration-200`}
+              style={{ maxWidth: '100%', overflowX: 'auto', whiteSpace: 'nowrap' }}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </a>
+          ))}
         </div>
-      )}
+      </div>
     </div>
   );
 };
 
 const Banner = () => {
+  const isMobile = useMediaQuery('(max-width: 640px)');
+  
   const smoothScroll = (e) => {
     e.preventDefault();
     const targetElement = document.getElementById('slogan');
@@ -143,7 +150,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="flex w-[1120px] gap-[120px] items-center flex-nowrap relative z-[1] mt-[53.844px] mr-0 mb-0 ml-[80px] pt-[100px]">
+    <div className="flex w-[1120px] mx-auto gap-[120px] items-center flex-nowrap relative z-[1] mt-[53.844px] mb-0 pt-[100px]">
       <div className='flex w-[548px] flex-col gap-[36px] items-start shrink-0 flex-nowrap relative z-[2]'>
         <span className="flex w-[548px] h-[162px] justify-start items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[64px] font-normal leading-[80.813px] text-[#323232] relative text-left z-[3]">
           <em>Gắn kết con người với thiên nhiên.</em>
@@ -188,14 +195,14 @@ const Banner = () => {
 
 export default function Main() {
   return (
-    <div className='main-container w-[1280px] h-[3592px] relative mx-auto my-0'>
-      <div id='main' className='w-[1280px] h-[720px] bg-[#fff] relative overflow-hidden mt-0 mr-0 mb-0 ml-0'>
+    <div className='main-container w-[1620px] h-[3592px] relative mx-auto my-0'>
+      <div id='main' className='max-w-[1620px] mx-auto h-[720px] bg-[#fff] relative overflow-hidden mt-0 mr-0 mb-0 ml-0'>
         <Navigation />
         <Banner />
       </div>
-      <div id='about' className='w-[1280px] h-[632px] bg-[#fff] relative overflow-hidden z-[28] mt-[320px] mr-0 mb-0 ml-0'>
-        <div className='w-[941.768px] h-[470px] absolute top-[71px] left-[535px] z-[32]'>
-          <div className='w-[740.768px] h-[740.514px] bg-[url(../assets/images/462477c9-e6be-4565-a475-bf954a09d791.png)] bg-cover bg-no-repeat absolute top-0 left-[201px] z-[32]' />
+      <div id='about' className='max-w-[1620px] mx-auto h-[632px] bg-[#fff] relative overflow-hidden z-[28] mt-[320px] mb-0'>
+        <div className='w-[941.768px] h-[470px] absolute top-[71px] left-[710px] z-[32]'>
+          <div className='w-[740.768px] h-[740.514px] bg-[url(../assets/images/462477c9-e6be-4565-a475-bf954a09d791.png)] bg-cover bg-no-repeat absolute top-0 left-[400px] z-[32]' />
           <span className="flex w-[384px] h-[81px] justify-center items-center font-['SVN-Averia_Serif_Libre'] text-[64px] font-light leading-[80.813px] text-[#6b8439] absolute top-[25px] left-px text-center whitespace-nowrap z-30">
             <em>Về Nàng Chay</em>
           </span>
@@ -220,14 +227,14 @@ export default function Main() {
             </span>
           </div>
         </div>
-        <div className='w-[383px] h-[468px] bg-[url(../assets/images/e047338c-a349-4b60-b8e5-7ec5f661cc23.png)] bg-cover bg-no-repeat rounded-[18px] absolute top-1/2 left-[80px] translate-x-0 translate-y-[-50%] z-[29]' />
+        <div className='w-[383px] h-[468px] bg-[url(../assets/images/e047338c-a349-4b60-b8e5-7ec5f661cc23.png)] bg-cover bg-no-repeat rounded-[18px] absolute top-1/2 left-[188px] translate-x-0 translate-y-[-50%] z-[29]' />
       </div>
 
       <ValueSection />
       <FAQs />
 
-      <div className='w-[1280px] h-[400px] bg-[#6b8439] relative overflow-hidden z-[76] mt-0 mr-0 mb-0 ml-0'>
-        <div className='flex w-[1098px] gap-[75px] justify-center items-start flex-nowrap relative z-[79] mt-[32px] mr-0 mb-0 ml-[91px]'>
+      <div className='max-w-[1620px] mx-auto h-[400px] bg-[#6b8439] relative overflow-hidden z-[76] mt-0 mb-0'>
+        <div className='flex w-[1098px] mx-auto gap-[75px] justify-center items-start flex-nowrap relative z-[79] mt-[32px] mb-0'>
           <div className='flex w-[316px] flex-col gap-[12px] items-center shrink-0 flex-nowrap relative z-[80]'>
             <div className='w-[128px] h-[128px] shrink-0 bg-[url(../assets/images/d97f02c2-b3dd-4ecf-8a53-cdbdab04d8a5.png)] bg-cover bg-no-repeat relative z-[81]' />
             <span className="flex w-[316px] h-[50px] justify-start items-start self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[20px] font-light leading-[25.254px] text-[#fff] relative text-left z-[82]">
@@ -282,13 +289,13 @@ export default function Main() {
             </span>
           </div>
         </div>
-        <div className='flex w-[400px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-start flex-nowrap relative z-[77] mt-[22px] mr-0 mb-0 ml-[440px]'>
+        <div className='flex w-[400px] mx-auto pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-start flex-nowrap relative z-[77] mt-[22px] mb-0'>
           <span className="h-[25px] grow shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[20px] font-light leading-[25px] text-[#fff] relative text-center whitespace-nowrap z-[78]">
             ⓒ Nàng Chay Official. All right reserved
           </span>
         </div>
       </div>
-      <div id='slogan' className='w-[1280px] h-[320px] bg-[url(../assets/images/eb89cadc-7e94-4c37-beb4-15c07b85b305.png)] bg-cover bg-no-repeat absolute top-[720px] left-0 overflow-hidden z-[27]' />
+      <div id='slogan' className='w-[1620px] mx-auto h-[320px] bg-[url(../assets/images/eb89cadc-7e94-4c37-beb4-15c07b85b305.png)] bg-cover bg-no-repeat bg-center absolute top-[720px] left-0 overflow-hidden z-[27]' />
     </div>
   );
 }

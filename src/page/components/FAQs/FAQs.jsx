@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa';
+import { useMediaQuery } from '@react-hook/media-query';
 
 const FAQs = () => {
 
@@ -13,10 +14,12 @@ const FAQs = () => {
         }
     };
 
+    const isMobile = useMediaQuery('(max-width: 640px)');
+
     return (
-        <div id='faqs' className='w-[1280px] h-[720px] bg-[#fff] relative overflow-hidden z-[56] mt-0 mr-0 mb-0 ml-0'>
-            <div className='flex h-[491px] flex-col gap-[24px] items-start absolute top-[65px] left-[159px] right-[665.994px] z-[59]'>
-                <span className="flex w-[455.006px] h-[123px] justify-start items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[48px] font-light leading-[60.609px] text-[#6b8439] relative text-left z-[60]">
+        <div id='faqs' className='max-w-screen-xl mx-auto h-[720px] bg-[#fff] relative overflow-hidden z-[56] mt-0 mb-0'>
+            <div className={`flex h-[491px] flex-col gap-[24px] items-start absolute ${isMobile ? 'top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2' : 'top-[65px] left-[159px] right-[665.994px]'} z-[59]`}>
+                <span className={`flex w-[455.006px] h-[123px] justify-start items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] ${isMobile ? 'text-[64px]' : 'text-[48px]'} font-light leading-[60.609px] text-[#6b8439] relative text-left z-[60]`}>
                     Bạn hỏi, tôi trả lời
                 </span>
                 <div className='h-px self-stretch shrink-0 bg-[url(../assets/images/19d17bdc-fe61-4f6b-a7eb-ecaa2935ef85.png)] bg-cover bg-no-repeat relative z-[61]' />
@@ -75,7 +78,7 @@ const FAQs = () => {
 
                 </div>
             </div>
-            <div className='w-[392px] h-[495px] absolute top-[120px] left-[777px] z-[58]'>
+            <div className={`w-[392px] h-[495px] absolute top-[120px] left-[777px] z-[58] hidden sm:block`}>
                 <div className='w-[360px] h-[480px] bg-[url(../assets/images/35b32dbf3f6395e10435d51b150d60b56b1b44cd.png)] bg-cover bg-no-repeat rounded-[8px] absolute top-1/2 left-[32px] translate-x-0 translate-y-[-51.56%] z-[57]' />
                 <div className='w-[64px] h-[64px] bg-[url(../assets/images/020b2664-19dc-44ab-8edc-66a6eff6a1b7.png)] bg-cover bg-no-repeat absolute top-[431px] left-0 overflow-hidden z-[58]' />
             </div>
