@@ -21,14 +21,14 @@ const ValueSection = () => {
             name: "Dầu dừa ép lạnh 100ml",
             engName: "Cold-Pressed Virgin Coconut Oil 100ml",
             image: "../assets/images/88ea845f18475251b66d52c02c009810d5971c72.png",
-            contactText: "Liên hệ",
+            contactText: "90,000đ",
         },
         {
             id: 2,
             name: "Dầu dừa ép lạnh 350ml",
             engName: "Cold-Pressed Virgin Coconut Oil 350ml",
             image: "../assets/images/66ef8c654575e0c0c2e19117bab59a3dc8ad0562.png",
-            contactText: "Liên hệ",
+            contactText: "220,000đ",
         },
         {
             id: 3,
@@ -66,18 +66,18 @@ const ValueSection = () => {
                 {
                     products.map((product) => (
                         <div key={product.id} className='flex flex-col gap-[12px] items-center grow shrink-0 basis-0 flex-nowrap relative'>
-                            <div className='w-[325px] h-[400px] shrink-0 bg-[url(../assets/images/88ea845f18475251b66d52c02c009810d5971c72.png)] bg-cover bg-no-repeat rounded-[8px] relative' />
+                            <div className={`w-[325px] h-[400px] shrink-0 bg-[url(${product.image})] bg-cover bg-no-repeat rounded-[8px] relative`} />
                             <span className="h-[20px] self-stretch shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#707070] relative text-center whitespace-nowrap">
                                 {product.name}
                             </span>
                             <span className="h-[20px] self-stretch shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#707070] relative text-center whitespace-nowrap">
                                 {product.engName}
                             </span>
-                            <button className='flex w-[100px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#fff] rounded-[8px] border-solid border border-[#323232] relative pointer' onClick={() => openModal(product)}>
+                            <div className='flex w-[100px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#fff] rounded-[8px] border-solid border border-[#323232] relative pointer'>
                                 <span className="flex w-[56px] h-[20px] justify-center items-center shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#6b8439] relative text-center whitespace-nowrap">
                                     {product.contactText}
                                 </span>
-                            </button>
+                            </div>
                         </div>
                     ))}
             </div>

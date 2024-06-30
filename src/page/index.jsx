@@ -3,6 +3,7 @@ import './index.css';
 import { useState, useEffect, useRef } from 'react';
 import ValueSection from './components/ValueSection/ValueSection';
 import FAQs from './components/FAQs/FAQs';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navigation = () => {
   const [show, setShow] = useState(true);
@@ -42,9 +43,9 @@ const Navigation = () => {
       });
 
       setActiveTab(targetId);
+      setIsMobileMenuOpen(false);
     }
 
-    // Add active class to clicked link
     const links = navRef.current.querySelectorAll('a');
     links.forEach(link => {
       link.classList.remove('text-[#6b8439]');
@@ -54,9 +55,23 @@ const Navigation = () => {
     e.target.classList.add('text-[#6b8439]');
   };
 
-  const handleBackgroundClick = () => {
-    setIsMobileMenuOpen(false); // Ẩn menu khi bấm vào phần nền mờ
+  const handleBackgroundClick = (e) => {
+    if (navRef.current && !navRef.current.contains(e.target)) {
+      setIsMobileMenuOpen(false);
+    }
   };
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.addEventListener('click', handleBackgroundClick);
+    } else {
+      document.removeEventListener('click', handleBackgroundClick);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleBackgroundClick);
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <div ref={navRef} className={`fixed top-0 w-full bg-white z-50 transition-transform duration-300 ${show ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
@@ -93,7 +108,7 @@ const Navigation = () => {
         </div>
         <div className='md:hidden'>
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className='text-[#707070] hover:text-[#6b8439] focus:outline-none'>
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg className="w20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               {isMobileMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
               ) : (
@@ -101,17 +116,16 @@ const Navigation = () => {
               )}
             </svg>
           </button>
-          {isMobileMenuOpen && (
-            <div onClick={handleBackgroundClick} className='fixed inset-0 bg-black opacity-50 z-30'></div>
-          )}
         </div>
       </div>
       {isMobileMenuOpen && (
-        <div className='md:hidden absolute top-16 left-0 w-full bg-white shadow-lg z-40 transition-transform duration-300 transform translate-y-2'>
-          <a href="#main" onClick={(e) => smoothScroll(e, 'main')} className={`block px-4 py-2 text-[24px] ${activeTab === 'main' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>Main</a>
-          <a href="#about" onClick={(e) => smoothScroll(e, 'about')} className={`block px-4 py-2 text-[24px] ${activeTab === 'about' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>About</a>
-          <a href="#value" onClick={(e) => smoothScroll(e, 'value')} className={`block px-4 py-2 text-[24px] ${activeTab === 'value' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>Value</a>
-          <a href="#faqs" onClick={(e) => smoothScroll(e, 'faqs')} className={`block px-4 py-2 text-[24px] ${activeTab === 'faqs' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>FAQs</a>
+        <div className='md:hidden absolute top-30 left-0 w-full bg-[#f8f4e3] shadow-lg z-40 transition-transform duration-300 transform translate-y-2'>
+          <div className="flex flex-col space-y-6 text-center w-full px-4">
+            <a href="#main" onClick={(e) => smoothScroll(e, 'main')} className={`font-['SVN-Averia_Serif_Libre'] block px-4 py-2 text-[24px] ${activeTab === 'main' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>Main</a>
+            <a href="#about" onClick={(e) => smoothScroll(e, 'about')} className={`font-['SVN-Averia_Serif_Libre'] block px-4 py-2 text-[24px] ${activeTab === 'about' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>About</a>
+            <a href="#value" onClick={(e) => smoothScroll(e, 'value')} className={`font-['SVN-Averia_Serif_Libre'] block px-4 py-2 text-[24px] ${activeTab === 'value' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>Value</a>
+            <a href="#faqs" onClick={(e) => smoothScroll(e, 'faqs')} className={`font-['SVN-Averia_Serif_Libre'] block px-4 py-2 text-[24px] ${activeTab === 'faqs' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>FAQs</a>
+          </div>
         </div>
       )}
     </div>
