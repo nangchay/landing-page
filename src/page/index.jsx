@@ -7,6 +7,7 @@ import FAQs from './components/FAQs/FAQs';
 const Navigation = () => {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const controlNavbar = () => {
     if (window.scrollY > lastScrollY) {
@@ -53,9 +54,12 @@ const Navigation = () => {
     e.target.classList.add('text-[#6b8439]');
   };
 
+  const handleBackgroundClick = () => {
+    setIsMobileMenuOpen(false); // Ẩn menu khi bấm vào phần nền mờ
+  };
+
   return (
     <div ref={navRef} className={`fixed top-0 w-full bg-white z-50 transition-transform duration-300 ${show ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
-
       <div className='flex w-[1107px] justify-between items-center flex-nowrap relative z-[18] mt-[33px] mr-0 mb-0 ml-[87px]'>
         <div className='flex w-[362px] gap-[4px] items-center shrink-0 flex-nowrap relative z-[19]'>
           <div className='w-[78px] h-[62.156px] shrink-0 bg-[url(../assets/images/778cf297-6bcc-4a0d-8a0d-5c109e912e73.png)] bg-cover bg-no-repeat rounded-[13px] relative z-20' />
@@ -69,26 +73,47 @@ const Navigation = () => {
             </span>
           </div>
         </div>
-        <div className='flex w-[394px] gap-[50px] items-start shrink-0 flex-nowrap relative z-[22]'>
-          <a href="#main" onClick={smoothScroll} className={`h-[30px] shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[24px] font-bold leading-[30px] relative text-left whitespace-nowrap z-[23] ${activeTab === 'main' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>
+        <div className='hidden md:flex w-[394px] gap-[50px] items-start shrink-0 flex-nowrap relative z-[22]'>
+          <a href="#main" onClick={(e) => smoothScroll(e, 'main')} className={`h-[30px] shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[24px] font-bold leading-[30px] relative text-left whitespace-nowrap z-[23] ${activeTab === 'main' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>
             Main
             {activeTab === 'main' && <div className="w-full h-[3px] bg-[#6b8439] absolute bottom-0 left-0 transition-transform duration-800 ease-in-out transform translate-x-0" />}
           </a>
-          <a href="#about" onClick={smoothScroll} className={`h-[30px] shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[24px] font-normal leading-[30px] relative text-left whitespace-nowrap z-[24] ${activeTab === 'about' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>
+          <a href="#about" onClick={(e) => smoothScroll(e, 'about')} className={`h-[30px] shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[24px] font-normal leading-[30px] relative text-left whitespace-nowrap z-[24] ${activeTab === 'about' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>
             About
             {activeTab === 'about' && <div className="w-full h-[3px] bg-[#6b8439] absolute bottom-0 left-0 transition-transform duration-800 ease-in-out transform translate-x-0" />}
           </a>
-          <a href="#value" onClick={smoothScroll} className={`h-[30px] shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[24px] font-normal leading-[30px] relative text-left whitespace-nowrap z-[25] ${activeTab === 'value' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>
+          <a href="#value" onClick={(e) => smoothScroll(e, 'value')} className={`h-[30px] shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[24px] font-normal leading-[30px] relative text-left whitespace-nowrap z-[25] ${activeTab === 'value' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>
             Value
             {activeTab === 'value' && <div className="w-full h-[3px] bg-[#6b8439] absolute bottom-0 left-0 transition-transform duration-800 ease-in-out transform translate-x-0" />}
           </a>
-          <a href="#faqs" onClick={smoothScroll} className={`h-[30px] shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[24px] font-normal leading-[30px] relative text-left whitespace-nowrap z-[26] ${activeTab === 'faqs' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>
+          <a href="#faqs" onClick={(e) => smoothScroll(e, 'faqs')} className={`h-[30px] shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[24px] font-normal leading-[30px] relative text-left whitespace-nowrap z-[26] ${activeTab === 'faqs' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>
             FAQs
             {activeTab === 'faqs' && <div className="w-full h-[3px] bg-[#6b8439] absolute bottom-0 left-0 transition-transform duration-800 ease-in-out transform translate-x-0" />}
           </a>
         </div>
+        <div className='md:hidden'>
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className='text-[#707070] hover:text-[#6b8439] focus:outline-none'>
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              {isMobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              )}
+            </svg>
+          </button>
+          {isMobileMenuOpen && (
+            <div onClick={handleBackgroundClick} className='fixed inset-0 bg-black opacity-50 z-30'></div>
+          )}
+        </div>
       </div>
-
+      {isMobileMenuOpen && (
+        <div className='md:hidden absolute top-16 left-0 w-full bg-white shadow-lg z-40 transition-transform duration-300 transform translate-y-2'>
+          <a href="#main" onClick={(e) => smoothScroll(e, 'main')} className={`block px-4 py-2 text-[24px] ${activeTab === 'main' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>Main</a>
+          <a href="#about" onClick={(e) => smoothScroll(e, 'about')} className={`block px-4 py-2 text-[24px] ${activeTab === 'about' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>About</a>
+          <a href="#value" onClick={(e) => smoothScroll(e, 'value')} className={`block px-4 py-2 text-[24px] ${activeTab === 'value' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>Value</a>
+          <a href="#faqs" onClick={(e) => smoothScroll(e, 'faqs')} className={`block px-4 py-2 text-[24px] ${activeTab === 'faqs' ? 'text-[#6b8439]' : 'text-[#707070]'} hover:text-[#6b8439]`}>FAQs</a>
+        </div>
+      )}
     </div>
   );
 };
@@ -183,9 +208,9 @@ export default function Main() {
         </div>
         <div className='w-[383px] h-[468px] bg-[url(../assets/images/e047338c-a349-4b60-b8e5-7ec5f661cc23.png)] bg-cover bg-no-repeat rounded-[18px] absolute top-1/2 left-[80px] translate-x-0 translate-y-[-50%] z-[29]' />
       </div>
-      
-      <ValueSection/>
-      <FAQs/>
+
+      <ValueSection />
+      <FAQs />
 
       <div className='w-[1280px] h-[400px] bg-[#6b8439] relative overflow-hidden z-[76] mt-0 mr-0 mb-0 ml-0'>
         <div className='flex w-[1098px] gap-[75px] justify-center items-start flex-nowrap relative z-[79] mt-[32px] mr-0 mb-0 ml-[91px]'>
