@@ -24,18 +24,17 @@ const FAQs = () => {
                 </span>
                 <div className='h-px self-stretch shrink-0 bg-[url(../assets/images/19d17bdc-fe61-4f6b-a7eb-ecaa2935ef85.png)] bg-cover bg-no-repeat relative z-[61]' />
                 <div className='flex h-[172px] flex-col gap-[20px] items-start self-stretch shrink-0 flex-nowrap relative'>
-                    <div className='flex gap-[90px] items-start self-stretch shrink-0 flex-nowrap relative'>
-                        <span className="font-['SVN-Averia_Serif_Libre'] text-[24px] font-bold leading-[31px] text-[#323232]">
-                            Công dụng của dầu dừa là gì?
+                    <div className='flex justify-between items-center self-stretch shrink-0 flex-nowrap relative z-[64]'>
+                        <span className="flex w-[414px] h-[50px] justify-start items-center shrink-0 font-['SVN-Averia_Serif_Libre'] text-[24px] font-bold leading-[50px] text-[#323232] relative text-left z-[69]">
+                        Công dụng của dầu dừa là gì?
                         </span>
-
-                        <div className='cursor-pointer w-[38px] h-[38px] shrink-0 relative overflow-hidden' onClick={() => toggleFAQ(0)}>
-                            <div className='w-[22.167px] h-[3.167px] relative mt-[17.414px] mr-0 mb-0 ml-[7.917px]'>
+                        <div className='cursor-pointer w-[38px] h-[38px] shrink-0 relative overflow-hidden z-[66]' onClick={() => toggleFAQ(0)}>
+                            <div className='w-[22.167px] h-[22.167px]relative z-[71] mt-[7.914px] mr-0 mb-0 ml-[7.917px]'>
                                 {expandedIndex === 0 ? <FaMinus /> : <FaPlus />}
                             </div>
                         </div>
-
                     </div>
+
                     {expandedIndex === 0 && (
                         <span className="flex w-[455.s006px] h-[114px] justify-start items-start self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[20px] font-light leading-[25.254px] text-[#707070] relative text-left">
                             Dầu dừa không chỉ để dưỡng da, dầu dừa còn có giá trị trong việc chăm sóc sắc đẹp như dưỡng tóc, tẩy trang, dưỡng mi hay dành cho mẹ và bé như giảm rạn da, tăng cường đề kháng cho bé,...
