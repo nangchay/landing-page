@@ -1,0 +1,19 @@
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    /* Điều chỉnh khoảng cách so với bottom của màn hình */
+    right: 20px;
+    /* Điều chỉnh khoảng cách so với right của màn hình */
+    background-color: #6b8439;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    /* Đảm bảo nút hiển thị trên top của các phần tử khác */
+}
+
+.scroll-to-top-btn:hover {
+    background-color: #e31f26;
+}
