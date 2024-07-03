@@ -1,7 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa';
+import AOS from 'aos';
 
 const FAQs = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, // Thời gian hiệu ứng (ms)
+        });
+    }, []);
+
     const [expandedIndex, setExpandedIndex] = useState(null);
 
     const toggleFAQ = (index) => {
@@ -11,10 +18,10 @@ const FAQs = () => {
     return (
         <div id='faqs' className='w-screen flex flex-col md:flex-row justify-center items-center w-screen py-8 lg:py-32 bg-[#fff]'>
             <div className='container w-full h-full lg:w-3/5 flex flex-col items-center gap-[24px] lg:ml-6 cf:ml-32 2xl:ml-36'>
-                <span className='text-center font-["SVN-Averia_Serif_Libre"] text-[48px] font-light text-[#6b8439]'>
+                <span data-aos="zoom-in" data-aos-duration="1500" className='text-center font-["SVN-Averia_Serif_Libre"] text-[48px] font-light text-[#6b8439]'>
                     Bạn hỏi, tôi trả lời
                 </span>
-                <div className='w-full max-w-4xl flex flex-col gap-[24px] mt-8'>
+                <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className='w-full max-w-4xl flex flex-col gap-[24px] mt-8'>
                     <div className='w-full'>
                         <div className='flex justify-between items-center p-4 bg-[#f8f4e3] rounded-lg cursor-pointer' onClick={() => toggleFAQ(0)}>
                             <span className="font-['SVN-Averia_Serif_Libre'] text-[24px] font-bold text-[#323232]">
@@ -71,8 +78,8 @@ const FAQs = () => {
                 </div>
             </div>
             <div className='hidden lg:block flex flex-col md:w-2/5 relative'>
-                <div className='w-[360px] h-[480px] bg-[url(/src/assets/images/faq-thumb.png)] bg-cover bg-no-repeat rounded-[8px] relative left-8' />
-                <div className='w-[64px] h-[64px] bg-[url(/src/assets/images/coco.png)] bg-cover bg-no-repeat absolute bottom-0 left-0' />
+                <div data-aos="fade-left" className='w-[360px] h-[480px] bg-[url(/src/assets/images/faq-thumb.png)] bg-cover bg-no-repeat rounded-[8px] relative left-8' />
+                <div data-aos="fade-in" className='w-[64px] h-[64px] bg-[url(/src/assets/images/coco.png)] bg-cover bg-no-repeat absolute bottom-0 left-0' />
             </div>
         </div>
     );

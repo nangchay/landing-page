@@ -1,8 +1,15 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa'
 import Modal from './Modal';
+import AOS from "aos";
 
 function Footer() {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+        });
+    }, []);
+
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const openModal = () => {
@@ -14,7 +21,7 @@ function Footer() {
     };
 
     return (
-        <div className='w-screen mx-auto lg:h-[400px] bg-[#6b8439] relative overflow-hidden z-[87] mt-0 mb-0'>
+        <div data-aos="fade-up" className='w-screen mx-auto lg:h-[400px] bg-[#6b8439] relative overflow-hidden z-[87] mt-0 mb-0'>
             <div className='flex flex-col lg:flex-row w-full gap-[24px] lg:gap-[12px] xl:gap-[75px] justify-center place-items-center lg:place-items-start relative z-[88] mt-[32px] mb-0'>
                 <div className='flex w-[316px] flex-col gap-[12px] items-center shrink-0 flex-nowrap relative z-[90]'>
                     <div className='w-[128px] h-[128px] shrink-0 bg-[url(/src/assets/images/logo-footer.png)] bg-cover bg-no-repeat relative z-[91]' />

@@ -1,6 +1,12 @@
-import React from "react";
+import {React, useEffect} from "react";
+import AOS from "aos";
 
 function Banner() {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, // Thời gian hiệu ứng (ms)
+        });
+    }, []);
 
     const smoothScroll = (e) => {
         e.preventDefault();
@@ -14,7 +20,7 @@ function Banner() {
     return (
         <div className="bg-[#fff] flex flex-col-reverse md:flex-row w-screen gap-0 items-center flex-nowrap relative z-[1] pb-8 pt-36">
 
-            <div className='px-6 xl:px-48 flex w-full md:w-3/5 h-full flex-col gap-[12px] md:gap-[36px] justify-center place-items-center md:place-items-start relative z-[2]'>
+            <div data-aos="fade-right" className='px-6 xl:px-48 flex w-full md:w-3/5 h-full flex-col gap-[12px] md:gap-[36px] justify-center place-items-center md:place-items-start relative z-[2]'>
                 <span className="flex w-full justify-center items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[32px] md:text-[64px] font-normal text-[#323232] relative text-center md:text-left z-[3]">
                     <em>Gắn kết con người với thiên nhiên.</em>
                 </span>
@@ -30,8 +36,8 @@ function Banner() {
             </div>
 
             <div className='flex gap-[10px] items-center grow basis-0 flex-nowrap relative z-[7]'>
-                <div className='w-[300px] h-[200px] md:h-[360px] md:w-[262px] lg:h-[420px] lg:w-[306px] xl:h-[420px] xl:w-[306px] cf:h-[486px] cf:w-[354px] bg-[url(/src/assets/images/banner-mobile.jpg)] md:bg-[url(/src/assets/images/banner.jpg)] bg-cover bg-no-repeat bg-center rounded-[12px] border-solid border border-[#323232] relative z-[8]' />
-                <div className='flex w-[88px] flex-col gap-[10px] items-center flex-nowrap relative z-[9]'>
+                <div data-aos="zoom-in" className='w-[300px] h-[200px] md:h-[360px] md:w-[262px] lg:h-[420px] lg:w-[306px] xl:h-[420px] xl:w-[306px] cf:h-[486px] cf:w-[354px] bg-[url(/src/assets/images/banner-mobile.jpg)] md:bg-[url(/src/assets/images/banner.jpg)] bg-cover bg-no-repeat bg-center rounded-[12px] border-solid border border-[#323232] relative z-[8]' />
+                <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className='flex w-[88px] flex-col gap-[10px] items-center flex-nowrap relative z-[9]'>
                     <span className="flex w-[88px] h-[81px] justify-center items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[18px] font-bold leading-[22.992px] text-[#8b5e3c] relative text-center rotate-90 z-10">
                         Follow us
                     </span>
