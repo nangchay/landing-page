@@ -1,7 +1,18 @@
-import React from "react";
-import { FaFacebook, FaInstagram, FaTiktok} from 'react-icons/fa'
+import { React, useState } from "react";
+import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa'
+import Modal from './Modal';
 
 function Footer() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     return (
         <div className='w-screen mx-auto lg:h-[400px] bg-[#6b8439] relative overflow-hidden z-[87] mt-0 mb-0'>
             <div className='flex flex-col lg:flex-row w-full gap-[24px] lg:gap-[12px] xl:gap-[75px] justify-center place-items-center lg:place-items-start relative z-[88] mt-[32px] mb-0'>
@@ -51,12 +62,13 @@ function Footer() {
                     <span className="flex w-[316px] h-[80px] justify-center items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[32px] font-bold leading-[40.875px] text-[#fff] relative text-center z-[112]">
                         Đề xuất
                     </span>
-                    <span className="flex w-[316px] h-[50px] justify-center items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[20px] font-light leading-[25.254px] text-[#fff] relative text-center underline z-[113]">
+                    <button onClick={openModal} className="flex w-[316px] h-[50px] justify-center items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[20px] font-light leading-[25.254px] text-[#fff] relative text-center underline z-[113]">
                         Hợp tác doanh nghiệp
-                    </span>
-                    <span className="flex w-[316px] h-[50px] justify-center items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[20px] font-light leading-[25.254px] text-[#fff] relative text-center underline z-[114]">
+                    </button>
+                    <button onClick={openModal} className="flex w-[316px] h-[50px] justify-center items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[20px] font-light leading-[25.254px] text-[#fff] relative text-center underline z-[114]">
                         Nghiên cứu sản phẩm mới
-                    </span>
+                    </button>
+                    <Modal isOpen={isModalOpen} onClose={closeModal} />
                 </div>
             </div>
             <div className='flex w-[400px] mx-auto pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-start flex-nowrap relative z-[115] mt-[22px] mb-0'>

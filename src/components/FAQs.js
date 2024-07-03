@@ -16,7 +16,7 @@ const FAQs = () => {
                 </span>
                 <div className='w-full max-w-4xl flex flex-col gap-[24px] mt-8'>
                     <div className='w-full'>
-                        <div className='flex justify-between items-center p-4 bg-[#f8f4e3] rounded-lg' onClick={() => toggleFAQ(0)}>
+                        <div className='flex justify-between items-center p-4 bg-[#f8f4e3] rounded-lg cursor-pointer' onClick={() => toggleFAQ(0)}>
                             <span className="font-['SVN-Averia_Serif_Libre'] text-[24px] font-bold text-[#323232]">
                                 Công dụng của dầu dừa là gì?
                             </span>
@@ -33,7 +33,7 @@ const FAQs = () => {
                         )}
                     </div>
                     <div className='w-full'>
-                        <div className='flex justify-between items-center p-4 bg-[#f8f4e3] rounded-lg' onClick={() => toggleFAQ(1)}>
+                        <div className='flex justify-between items-center p-4 bg-[#f8f4e3] rounded-lg cursor-pointer' onClick={() => toggleFAQ(1)}>
                             <span className="font-['SVN-Averia_Serif_Libre'] text-[24px] font-bold text-[#323232]">
                                 Dầu dừa có thể sử dụng cho trẻ sơ sinh được không?
                             </span>
@@ -50,7 +50,7 @@ const FAQs = () => {
                         )}
                     </div>
                     <div className='w-full'>
-                        <div className='flex justify-between items-center p-4 bg-[#f8f4e3] rounded-lg' onClick={() => toggleFAQ(2)}>
+                        <div className='flex justify-between items-center p-4 bg-[#f8f4e3] rounded-lg cursor-pointer' onClick={() => toggleFAQ(2)}>
                             <span className="font-['SVN-Averia_Serif_Libre'] text-[24px] font-bold text-[#323232]">
                                 Dầu dừa có tác dụng gì với tóc?
                             </span>
