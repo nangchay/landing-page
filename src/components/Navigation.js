@@ -33,7 +33,7 @@ function Navigation() {
         window.addEventListener('scroll', controlNavbar);
         return () => {
           window.removeEventListener('scroll', controlNavbar);
-        };
+        }; // eslint-disable-next-line
       }, [lastScrollY]);
 
     const smoothScroll = (e, target) => {

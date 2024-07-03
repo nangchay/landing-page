@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa'
 import Modal from './Modal';
 import AOS from "aos";
+import { AiOutlineCheckCircle } from "react-icons/ai";
 
 function Footer() {
     useEffect(() => {
@@ -20,6 +21,65 @@ function Footer() {
         setIsModalOpen(false);
     };
 
+    const [email, setEmail] = useState("");
+    const [showModal, setShowModal] = useState(false);
+
+    const handleInputChange = (e) => {
+        setEmail(e.target.value);
+    };
+
+    const handleFormReset = () => {
+        setEmail("");
+    };
+
+    const validateForm = () => {
+        if (!email) {
+            alert("Please enter your email");
+            return false;
+        }
+        return true;
+    };
+
+    const submitToGoogleForm = () => {
+        const formData = new FormData();
+        const GGL_FORM_EMAIL_ID = `entry.${process.env.EMAIL_ENTRY_ID}`;
+        console.log(process.env.EMAIL_ENTRY_ID);
+        console.log(process.env.FORM_ID);
+
+        formData.append(GGL_FORM_EMAIL_ID, email);
+
+        fetch(`https://docs.google.com/forms/d/e/${process.env.FORM_ID}/formResponse`, {
+            method: "POST",
+            body: formData,
+            header: {
+                Accept: 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            mode: "no-cors",
+        })
+            .then(() => {
+                setShowModal(true);
+                setTimeout(() => {
+                    setShowModal(false); // Ẩn modal sau 3 giây
+                }, 3000);
+                handleFormReset();
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+                alert("Submission failed");
+            });
+    };
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+        if (!validateForm()) {
+            return;
+        }
+
+        submitToGoogleForm();
+    };
+
     return (
         <div data-aos="fade-up" className='w-screen mx-auto lg:h-[400px] bg-[#6b8439] relative overflow-hidden z-[87] mt-0 mb-0'>
             <div className='flex flex-col lg:flex-row w-full gap-[24px] lg:gap-[12px] xl:gap-[75px] justify-center place-items-center lg:place-items-start relative z-[88] mt-[32px] mb-0'>
@@ -29,14 +89,29 @@ function Footer() {
                         Nếu có thắc mắc, bạn hãy lại lời nhắn cho Nàng Chay tại đây!
                     </span>
                     <div className='flex pt-[10px] pr-0 pb-[10px] pl-0 justify-between items-center self-stretch shrink-0 flex-nowrap relative z-[93]'>
-                        <input type='email' placeholder='Nhập email của bạn ...' className='flex w-[200px] h-[48px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#f8f4e3] rounded-[8px] border-solid border-2 border-[#b77f5d] relative z-[94] pointer' />
-                        <button className='flex w-[96px] h-[48px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#603913] rounded-[8px] border-none relative z-[95] pointer'>
-                            <span className="flex w-[50px] h-[23px] justify-center items-center shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[18px] font-normal leading-[23px] text-[#fff] relative text-center whitespace-nowrap z-[96]">
-                                Gửi đi
-                            </span>
-                        </button>
+                        <form className="flex justify-between items-center self-stretch shrink-0 flex-nowrap relative" onSubmit={onSubmit} onReset={handleFormReset}>
+                            <input required type="email" id="email" name="email" value={email} onChange={handleInputChange} placeholder='Nhập email của bạn ...' className='flex w-[200px] h-[48px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#f8f4e3] rounded-[8px] border-solid border-2 border-[#b77f5d] relative z-[94] pointer' />
+                            <button className='flex w-[96px] h-[48px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#603913] rounded-[8px] border-none relative z-[95] pointer'>
+                                <span className="flex w-[50px] h-[23px] justify-center items-center shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[18px] font-normal leading-[23px] text-[#fff] relative text-center whitespace-nowrap z-[96]">
+                                    Gửi đi
+                                </span>
+                            </button>
+                        </form>
+
                     </div>
                 </div>
+                {showModal && (
+                    <div className="modal fixed inset-0 flex items-center justify-center z-[117]">
+                        <div className="font-['SVN-Averia_Serif_Libre'] modal-content bg-white p-4 rounded shadow-lg text-center">
+                            <span className="close absolute top-0 right-0 m-3 cursor-pointer" onClick={() => setShowModal(false)}>
+                                &times;
+                            </span>
+                            <AiOutlineCheckCircle size={50} color="green" className="mx-auto mb-4" />
+                            <h2 className="text-xl mb-2">Cảm ơn bạn đã đăng ký!</h2>
+                            <p>Nàng Chay sẽ liên hệ lại với bạn sớm qua email này.</p>
+                        </div>
+                    </div>
+                )}
                 <div className='flex lg:flex-basis-1/3 w-[316px] flex-col items-center shrink-0 flex-nowrap relative z-[97]'>
                     <span className="flex w-[316px] h-[80px] justify-center items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[32px] font-bold leading-[40.875px] text-[#fff] relative text-center z-[98]">
                         Liên hệ
