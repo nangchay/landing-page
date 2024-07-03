@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
+import AOS from 'aos';
 
 const Value = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+        });
+    }, []);
+
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const openModal = () => {
@@ -15,7 +22,7 @@ const Value = () => {
     return (
         <div id='value' className='w-screen mx-auto bg-[#f8f4e3] relative overflow-hidden z-[33] mt-0 mb-0 py-8 md:py-16 z-[38]'>
             <div className='flex w-full mx-auto flex-col gap-[12px] items-center flex-nowrap relative z-[53] mt-0 mb-0 z-[39]'>
-                <div className="w-full self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[32px] sm:text-[48px] font-normal leading-[60.609px] relative text-center whitespace-nowrap z-[40]">
+                <div data-aos="zoom-out" data-aos-duration="1500" className="w-full self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[32px] sm:text-[48px] font-normal leading-[60.609px] relative text-center whitespace-nowrap z-[40]">
                     <span className="font-['SVN-Averia_Serif_Libre'] font-light leading-[60.609px] text-[#707070] relative text-center">
                         <em>SELL </em>
                     </span>
@@ -31,12 +38,12 @@ const Value = () => {
                         product
                     </span>
                 </div>
-                <span className="flex w-full h-[38px] justify-center items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[18px] sm:text-[20px] font-normal leading-[25.254px] text-[#323232] relative text-center z-[45]">
+                <span data-aos="zoom-in" className="flex w-full h-[38px] justify-center items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[18px] sm:text-[20px] font-normal leading-[25.254px] text-[#323232] relative text-center z-[45]">
                     Chúng tôi bán câu chuyện, bạn có sẵn sàng nghe?
                 </span>
             </div>
 
-            <div className="overflow-x-auto scroll-smooth flex w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 gap-[12px] items-center flex-nowrap relative z-[34] mt-[62px] mb-0 z-[46]">
+            <div data-aos="fade-in" className="overflow-x-auto scroll-smooth flex w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 gap-[12px] items-center flex-nowrap relative z-[34] mt-[62px] mb-0 z-[46]">
 
                 <div className="flex flex-col gap-[12px] items-center grow shrink-0 basis-0 flex-nowrap relative mb-4 z-[47]">
                     <div className="w-[325px] h-[400px] shrink-0 bg-[url('/src/assets/images/oil100.png')] bg-cover bg-no-repeat rounded-[8px] border-solid border-2 border-[#b77f5d] relative z-[48]" />

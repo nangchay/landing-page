@@ -1,9 +1,15 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-
+import AOS from 'aos';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 
 function Navigation() {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, // Thời gian hiệu ứng (ms)
+        });
+    }, []);
+
     const [show, setShow] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [nav, setNav] = useState(false)
@@ -80,7 +86,7 @@ function Navigation() {
     return (
         // Navigation bar on large screen
         <div ref={navRef} className={`fixed top-0 w-screen bg-[#fff] z-[120] transition-transform duration-300 ${show ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
-            <div id='main' className='w-full bg-[#fff] h-[100px] z-[120] flex relative cf:mt-[33px] mb-0'>
+            <div data-aos="fade-down" id='main' className='w-full bg-[#fff] h-[100px] z-[120] flex relative cf:mt-[33px] mb-0'>
 
                 <div className='px-4 sm:px-12 xl:px-48 flex justify-between items-center w-full h-full z-[120]'>
                     <div className='flex items-center z-[117]'>

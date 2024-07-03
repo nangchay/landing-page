@@ -7,10 +7,16 @@ import About from "./components/About";
 import Value from "./components/Value";
 import FAQs from "./components/FAQs";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import AOS from "aos";
 
-import sloganImage from './assets/images/slogan.png'; //
+import sloganImage from './assets/images/slogan.png';
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Thời gian hiệu ứng (ms)
+    });
+  }, []);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -42,14 +48,14 @@ function App() {
         <>
           <Navigation />
           <Banner />
-          <div id='slogan' className='bg-[#fff] w-full mx-auto h-[72px] sm:h-[80px] md:h-[200px] lg:h-[300px] relative left-0 overflow-hidden z-[27]'>
+          <div data-aos="fade-up" id='slogan' className='bg-[#fff] w-full mx-auto h-[72px] sm:h-[80px] md:h-[200px] lg:h-[300px] relative left-0 overflow-hidden z-[27]'>
             <LazyLoadImage
               src={sloganImage}
               alt="Slogan"
               className="object-cover object-cover-center w-full h-full"
             />
             <div className="container absolute inset-0 flex items-center justify-center text-white text-center">
-              <p className="font-['SVN-Averia_Serif_Libre'] text-[20px] md:text-[48px] font-light">
+              <p data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500" className="font-['SVN-Averia_Serif_Libre'] text-[20px] md:text-[48px] font-light">
                 Nàng Chay bán câu chuyện, bạn có sẵn sàng lắng nghe?
               </p>
             </div>
