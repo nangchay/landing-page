@@ -88,8 +88,8 @@ function Navigation() {
 
     return (
         // Navigation bar on large screen
-        <div ref={navRef} className={`fixed top-0 w-screen bg-[url(/src/assets/images/bg-banner.jpeg)] bg-center bg-cover bg-no-repeat z-[120] transition-transform duration-300 ${show ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
-            <div data-aos="fade-down" id='main' className='w-full h-[100px] z-[120] flex relative cf:mt-[33px] mb-0'>
+        <div ref={navRef} className={`fixed top-0 w-full bg-[url(/src/assets/images/bg-banner.jpeg)] bg-center bg-cover bg-no-repeat z-[120] transition-transform duration-300 ${show ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
+            <div id='main' className='w-full h-[100px] z-[120] flex relative mt-0 xl:mt-[33px] mb-0'>
 
                 <div className='px-4 sm:px-12 xl:px-48 flex justify-between items-center w-full h-full z-[120]'>
                     <div className='flex items-center z-[120]'>

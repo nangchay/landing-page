@@ -123,17 +123,17 @@ function Footer() {
                         +84 398.156.371
                     </span>
                     <div className='flex h-[50px] gap-[23px] justify-center items-center self-stretch shrink-0 flex-nowrap relative z-[101]'>
-                        <a href="https://www.instagram.com/nangchayvn" target="_blank" rel="noopener noreferrer" className='w-[36px] h-[36px] inline-block transform transition-transform duration-300 hover:translate-y-2'>
+                        <a href="https://www.instagram.com/nangchayvn" target="_blank" rel="noopener noreferrer" className='w-[36px] h-[36px] inline-block transform transition-transform duration-300 hover:-translate-y-2'>
                             <div className='w-[36px] h-[36px] shrink-0 relative overflow-hidden z-[103]'>
                                 <FaInstagram className='text-[#fff] w-[30px] h-[30px] relative z-[104] mt-[3px] mr-0 mb-0 ml-[3px]' />
                             </div>
                         </a>
-                        <a href="https://www.facebook.com/nangchayvn" target="_blank" rel="noopener noreferrer" className='w-[36px] h-[36px] inline-block transform transition-transform duration-300 hover:translate-y-2'>
+                        <a href="https://www.facebook.com/nangchayvn" target="_blank" rel="noopener noreferrer" className='w-[36px] h-[36px] inline-block transform transition-transform duration-300 hover:-translate-y-2'>
                             <div className='w-[36px] h-[36px] shrink-0 relative overflow-hidden z-[106]'>
                                 <FaFacebook className='text-[#fff] w-[30px] h-[30px] relative z-[107] mt-[3px] mr-0 mb-0 ml-[3px]' />
                             </div>
                         </a>
-                        <a href="https://www.tiktok.com/@nangchayvn" target="_blank" rel="noopener noreferrer" className='w-[36px] h-[36px] inline-block transform transition-transform duration-300 hover:translate-y-2'>
+                        <a href="https://www.tiktok.com/@nangchayvn" target="_blank" rel="noopener noreferrer" className='w-[36px] h-[36px] inline-block transform transition-transform duration-300 hover:-translate-y-2'>
                             <div className='w-[36px] h-[36px] shrink-0 relative overflow-hidden z-[109]'>
                                 <FaTiktok className='text-[#fff] w-[30px] h-[30px] relative z-[110] mt-[3px] mr-0 mb-0 ml-[3px]' />
                             </div>
