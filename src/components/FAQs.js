@@ -19,7 +19,7 @@ const FAQs = () => {
         <div id='faqs' className='w-screen flex flex-col md:flex-row justify-center items-center w-screen py-8 lg:py-32 bg-[#fff]'>
             <div className='container w-full h-full lg:w-3/5 flex flex-col items-center gap-[24px] lg:ml-6 cf:ml-32 2xl:ml-36'>
                 <span data-aos="zoom-in" data-aos-duration="1500" className='text-center font-["SVN-Averia_Serif_Libre"] text-[48px] font-light text-[#6b8439]'>
-                    Bạn hỏi, tôi trả lời
+                    Bạn hỏi, Nàng Chay trả lời
                 </span>
                 <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className='w-full max-w-4xl flex flex-col gap-[24px] mt-8'>
                     <div className='w-full'>

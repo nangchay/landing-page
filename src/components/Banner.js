@@ -18,7 +18,7 @@ function Banner() {
     };
 
     return (
-        <div className="bg-[#fff] flex flex-col-reverse md:flex-row w-screen gap-0 items-center flex-nowrap relative z-[1] pb-8 pt-36">
+        <div className="bg-[url(/src/assets/images/bg-banner.jpeg)] bg-center bg-cover bg-no-repeat flex flex-col-reverse md:flex-row w-screen gap-0 items-center flex-nowrap relative z-[1] pb-8 pt-36">
 
             <div data-aos="fade-right" className='px-6 xl:px-48 flex w-full md:w-3/5 h-full flex-col gap-[12px] md:gap-[36px] justify-center place-items-center md:place-items-start relative z-[2]'>
                 <span className="flex w-full justify-center items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[32px] md:text-[64px] font-normal text-[#323232] relative text-center md:text-left z-[3]">

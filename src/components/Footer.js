@@ -89,7 +89,7 @@ function Footer() {
                         Nếu có thắc mắc, bạn hãy lại lời nhắn cho Nàng Chay tại đây!
                     </span>
                     <div className='flex pt-[10px] pr-0 pb-[10px] pl-0 justify-between items-center self-stretch shrink-0 flex-nowrap relative z-[93]'>
-                        <form className="flex justify-between items-center self-stretch shrink-0 flex-nowrap relative" onSubmit={onSubmit} onReset={handleFormReset}>
+                        <form className="flex justify-between items-center self-stretch shrink-0 gap-[10px] flex-nowrap relative" onSubmit={onSubmit} onReset={handleFormReset}>
                             <input required type="email" id="email" name="email" value={email} onChange={handleInputChange} placeholder='Nhập email của bạn ...' className='flex w-[200px] h-[48px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#f8f4e3] rounded-[8px] border-solid border-2 border-[#b77f5d] relative z-[94] pointer' />
                             <button className='flex w-[96px] h-[48px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#603913] rounded-[8px] border-none relative z-[95] pointer'>
                                 <span className="flex w-[50px] h-[23px] justify-center items-center shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[18px] font-normal leading-[23px] text-[#fff] relative text-center whitespace-nowrap z-[96]">
