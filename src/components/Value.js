@@ -46,7 +46,7 @@ const Value = () => {
             <div data-aos="fade-in" className="overflow-x-auto scroll-smooth flex w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 gap-[12px] items-center flex-nowrap relative z-[34] mt-[62px] mb-0 z-[46]">
 
                 <div className="flex flex-col gap-[12px] items-center grow shrink-0 basis-0 flex-nowrap relative mb-4 z-[47]">
-                    <div className="w-[325px] h-[400px] shrink-0 bg-[url('/src/assets/images/oil100.png')] bg-cover bg-no-repeat rounded-[8px] border-solid border-2 border-[#b77f5d] relative z-[48]" />
+                    <div className="w-[325px] h-[400px] shrink-0 bg-[url('/src/assets/images/oil100.png')] bg-cover bg-no-repeat rounded-[8px] hover:border-2 hover:border-[#b77f5d] transition-all duration-1000 ease-in-out relative z-[48]" />
                     <span className="h-[20px] self-stretch shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#707070] relative text-center whitespace-nowrap z-[49]">
                         Dầu dừa ép lạnh 100ml
                     </span>
@@ -61,7 +61,7 @@ const Value = () => {
                 </div>
 
                 <div className="flex flex-col gap-[12px] items-center grow shrink-0 basis-0 flex-nowrap relative mb-4 z-[53]">
-                    <div className="w-[325px] h-[400px] shrink-0 bg-[url('/src/assets/images/oil350.png')] bg-cover bg-no-repeat rounded-[8px] border-solid border-2 border-[#b77f5d] relative" />
+                    <div className="w-[325px] h-[400px] shrink-0 bg-[url('/src/assets/images/oil350.png')] bg-cover bg-no-repeat rounded-[8px] hover:border-2 hover:border-[#b77f5d] transition-all duration-1000 ease-in-out relative" />
                     <span className="h-[20px] self-stretch shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#707070] relative text-center whitespace-nowrap">
                         Dầu dừa ép lạnh 350ml
                     </span>
@@ -76,14 +76,14 @@ const Value = () => {
                 </div>
 
                 <div className="flex flex-col gap-[12px] items-center grow shrink-0 basis-0 flex-nowrap relative mb-4 -z[59]">
-                    <div className="w-[325px] h-[400px] shrink-0 bg-[url('/src/assets/images/oil10.png')] bg-cover bg-no-repeat rounded-[8px] border-solid border-2 border-[#b77f5d] relative" />
+                    <div className="w-[325px] h-[400px] shrink-0 bg-[url('/src/assets/images/oil10.png')] bg-cover bg-no-repeat rounded-[8px] hover:border-2 hover:border-[#b77f5d] transition-all duration-1000 ease-in-out relative" />
                     <span className="h-[20px] self-stretch shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#707070] relative text-center whitespace-nowrap">
                         Dầu dừa dưỡng mi
                     </span>
                     <span className="h-[20px] self-stretch shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#707070] relative text-center whitespace-nowrap">
                         Eyelash Virgin Coconut Oil
                     </span>
-                    <button onClick={openModal} className="flex w-[100px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#fff] rounded-[8px] border-solid border border-[#323232] relative pointer">
+                    <button onClick={openModal} className="flex w-[100px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#fff] hover:bg-slate-100 rounded-[8px] border-solid border border-[#323232] relative pointer">
                         <span className="flex w-[56px] h-[20px] justify-center items-center shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#6b8439] relative text-center whitespace-nowrap z-[64]">
                             Liên hệ
                         </span>

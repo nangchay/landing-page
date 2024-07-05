@@ -91,7 +91,7 @@ function Footer() {
                     <div className='flex pt-[10px] pr-0 pb-[10px] pl-0 justify-between items-center self-stretch shrink-0 flex-nowrap relative z-[93]'>
                         <form className="flex justify-between items-center self-stretch shrink-0 gap-[10px] flex-nowrap relative" onSubmit={onSubmit} onReset={handleFormReset}>
                             <input required type="email" id="email" name="email" value={email} onChange={handleInputChange} placeholder='Nhập email của bạn ...' className='flex w-[200px] h-[48px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#f8f4e3] rounded-[8px] border-solid border-2 border-[#b77f5d] relative z-[94] pointer' />
-                            <button className='flex w-[96px] h-[48px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#603913] rounded-[8px] border-none relative z-[95] pointer'>
+                            <button className='flex w-[96px] h-[48px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#b77f5d] hover:bg-lime-700 rounded-[8px] border-none relative z-[95] pointer'>
                                 <span className="flex w-[50px] h-[23px] justify-center items-center shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[18px] font-normal leading-[23px] text-[#fff] relative text-center whitespace-nowrap z-[96]">
                                     Gửi đi
                                 </span>
@@ -116,12 +116,12 @@ function Footer() {
                     <span className="flex w-[316px] h-[80px] justify-center items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[32px] font-bold leading-[40.875px] text-[#fff] relative text-center z-[98]">
                         Liên hệ
                     </span>
-                    <span className="flex w-[316px] h-[50px] justify-center items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[20px] font-normal leading-[25.254px] text-[#fff] relative text-center z-[99]">
+                    <a href="mailto: support@nangchay.com" className="flex w-[316px] h-[50px] justify-center items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[20px] font-normal leading-[25.254px] text-[#fff] relative text-center z-[99]">
                         support@nangchay.com
-                    </span>
-                    <span className="flex w-[316px] h-[50px] justify-center items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[20px] font-normal leading-[25.254px] text-[#fff] relative text-center z-[100]">
+                    </a>
+                    <a href="tel: +84.398.156.371" className="flex w-[316px] h-[50px] justify-center items-center self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[20px] font-normal leading-[25.254px] text-[#fff] relative text-center z-[100]">
                         +84 398.156.371
-                    </span>
+                    </a>
                     <div className='flex h-[50px] gap-[23px] justify-center items-center self-stretch shrink-0 flex-nowrap relative z-[101]'>
                         <a href="https://www.instagram.com/nangchayvn" target="_blank" rel="noopener noreferrer" className='w-[36px] h-[36px] inline-block transform transition-transform duration-300 hover:-translate-y-2'>
                             <div className='w-[36px] h-[36px] shrink-0 relative overflow-hidden z-[103]'>
