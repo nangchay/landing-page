@@ -47,7 +47,7 @@ function Navigation() {
             top: element.offsetTop,
             behavior: 'smooth'
         });
-        handleClose();
+            handleClose();
     };
 
     const handleBackgroundClick = useCallback((e) => {

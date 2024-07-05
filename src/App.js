@@ -14,7 +14,7 @@ import sloganImage from './assets/images/slogan.png';
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Thời gian hiệu ứng (ms)
+      duration: 500, // Thời gian hiệu ứng (ms)
     });
   }, []);
   const [isLoading, setIsLoading] = useState(true);
@@ -41,7 +41,6 @@ function App() {
             <span>h</span>
             <span>a</span>
             <span>y</span>
-            <span>.</span>
           </div>
         </div>
       ) : (

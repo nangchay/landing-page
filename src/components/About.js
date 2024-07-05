@@ -10,7 +10,6 @@ function About() {
 
     return (
         <div id='about' className='bg-[#fff] flex flex-col-reverse lg:flex-row-reverse w-screen gap-0 items-center flex-nowrap relative z-[28] py-8 md:py-16'>
-            {/* <div className='w-[740.768px] h-[740.514px] bg-[url(/src/assets/images/coco-leaf.png)] bg-cover bg-no-repeat relative z-[29]' /> */}
             <div className='px-6 xl:px-24 cf:px-32 2xl:px-48 flex w-full h-full flex-col gap-[12px] md:gap-[36px] justify-center place-items-center md:place-items-start z-[30]'>
                 <span data-aos="fade-up" className="max-flex w-full items-center justify-center md:justify-start self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[48px] sm:text-[64px] font-light text-[#6b8439] text-center lg:text-left relative z-[31]">
                     <em>Về Nàng Chay</em>
@@ -39,7 +38,7 @@ function About() {
             <div data-aos="fade-up" data-aos-delay="400" className="flex flex-nowrap w-full lg:w-2/5 h-full relative z-[36] justify-center lg:ml-12 cf:ml-32 2xl:ml-48">
                 <div className='w-[300px] h-[366.6px] sm:w-[383px] sm:h-[468px] bg-[url(/src/assets/images/about-thumb.png)] bg-cover bg-no-repeat rounded-[18px] relative z-[37]' />
             </div>
-            <div data-aos="fade-left" data-aos-delay="200" className="absolute bottom-0 right-0 w-[160px] h-[160px] bg-[url(/src/assets/images/coco-leaf.png)] bg-cover bg-no-repeat" />
+            <div data-aos="fade-down" data-aos-delay="200" className="absolute top-0 right-0 w-[160px] h-[160px] bg-[url(/src/assets/images/coco-leaf.png)] bg-cover bg-no-repeat" />
         </div>
     )
 }

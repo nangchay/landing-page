@@ -27,7 +27,7 @@ const Modal = ({ isOpen, onClose }) => {
                         <h2 className='text-xl font-bold mb-4'>Chọn kênh liên hệ cho sản phẩm</h2>
                         <div className='mt-4 flex justify-center'>
                             <a
-                                href='https://www.m.me/nangchayvn'
+                                href='https://m.me/304495036083609'
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 className='w-[36px] h-[36px] inline-block transform transition-transform duration-300 hover:translate-y-2 mx-2'
