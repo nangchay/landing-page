@@ -93,12 +93,12 @@ function Navigation() {
 
     return (
         // Navigation bar on large screen
-        <div ref={navRef} className={`fixed top-0 w-full bg-[url(/src/assets/images/bg-banner.jpeg)] bg-center bg-cover bg-no-repeat z-[120] transition-transform duration-300 ${show ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
+        <div ref={navRef} className={`fixed top-0 w-full bg-[url(https://res.cloudinary.com/nangchay/image/upload/v1720423404/nangchay/bg_banner.jpeg)] bg-center bg-cover bg-no-repeat z-[120] transition-transform duration-300 ${show ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
             <div className='w-full h-[100px] z-[120] flex relative mt-0 xl:mt-[33px] mb-0'>
 
                 <div className='px-4 sm:px-12 xl:px-48 flex justify-between items-center w-full h-full z-[120]'>
                     <div className='flex items-center z-[120]'>
-                        <div className={`lg:ml-4 w-[78px] h-[62.156px] shrink-0 bg-[url(/src/assets/images/logo.png)] bg-cover bg-no-repeat rounded-[13px] relative z-[120] cursor-pointer`} onClick={() => window.location.reload()} />
+                        <div className={`lg:ml-4 w-[78px] h-[62.156px] shrink-0 bg-[url(https://res.cloudinary.com/nangchay/image/upload/v1720423404/nangchay/logo.png)] bg-cover bg-no-repeat rounded-[13px] relative z-[120] cursor-pointer`} onClick={() => window.location.reload()} />
                         <div className="shrink-0 font-['SVN-Averia_Serif_Libre'] text-[20px] font-bold leading-[25.547px] relative text-left whitespace-nowrap z-[120]">
                             <a href='./' className={`font-['SVN-Averia_Serif_Libre'] 20px font-bold leading-[25.547px] text-[#6b8439] relative text-left z-[120]`}>
                                 Nàng Chay

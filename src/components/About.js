@@ -36,9 +36,9 @@ function About() {
                 </div>
             </div>
             <div data-aos="fade-up" data-aos-delay="400" className="flex flex-nowrap w-full lg:w-2/5 h-full relative z-[36] justify-center lg:ml-12 cf:ml-32 2xl:ml-48">
-                <div className='w-[300px] h-[366.6px] sm:w-[383px] sm:h-[468px] bg-[url(/src/assets/images/about-thumb.png)] bg-cover bg-no-repeat rounded-[18px] relative z-[37]' />
+                <div className='w-[300px] h-[366.6px] sm:w-[383px] sm:h-[468px] bg-[url(https://res.cloudinary.com/nangchay/image/upload/v1720423404/nangchay/about_thumb.png)] bg-cover bg-no-repeat rounded-[18px] relative z-[37]' />
             </div>
-            <div data-aos="fade-down" data-aos-delay="200" className="absolute top-0 right-0 w-[160px] h-[160px] bg-[url(/src/assets/images/coco-leaf.png)] bg-cover bg-no-repeat" />
+            <div data-aos="fade-down" data-aos-delay="200" className="absolute top-0 right-0 w-[160px] h-[160px] bg-[url(https://res.cloudinary.com/nangchay/image/upload/v1720423404/nangchay/coco_leaf.png)] bg-cover bg-no-repeat" />
         </div>
     )
 }

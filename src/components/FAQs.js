@@ -78,8 +78,8 @@ const FAQs = () => {
                 </div>
             </div>
             <div className='hidden lg:block flex flex-col md:w-2/5 relative'>
-                <div data-aos="fade-left" className='w-[360px] h-[480px] bg-[url(/src/assets/images/faq-thumb.png)] bg-cover bg-no-repeat rounded-[8px] relative left-8' />
-                <div data-aos="fade-in" className='w-[64px] h-[64px] bg-[url(/src/assets/images/coco.png)] bg-cover bg-no-repeat absolute bottom-0 left-0' />
+                <div data-aos="fade-left" className='w-[360px] h-[480px] bg-[url(https://res.cloudinary.com/nangchay/image/upload/v1720423404/nangchay/faq_thumb.png)] bg-cover bg-no-repeat rounded-[8px] relative left-8' />
+                <div data-aos="fade-in" className='w-[64px] h-[64px] bg-[url(https://res.cloudinary.com/nangchay/image/upload/v1720423404/nangchay/coco.png)] bg-cover bg-no-repeat absolute bottom-0 left-0' />
             </div>
         </div>
     );

@@ -84,7 +84,7 @@ function Footer() {
         <div data-aos="fade-up" className='w-screen mx-auto lg:h-[400px] bg-[#6b8439] relative overflow-hidden z-[87] mt-0 mb-0'>
             <div className='flex flex-col lg:flex-row w-full gap-[24px] lg:gap-[12px] xl:gap-[75px] justify-center place-items-center lg:place-items-start relative z-[88] mt-[32px] mb-0'>
                 <div className='flex w-[316px] flex-col gap-[12px] items-center shrink-0 flex-nowrap relative z-[90]'>
-                    <div className='w-[128px] h-[128px] shrink-0 bg-[url(/src/assets/images/logo-footer.png)] bg-cover bg-no-repeat relative z-[91]' />
+                    <div className='w-[128px] h-[128px] shrink-0 bg-[url(https://res.cloudinary.com/nangchay/image/upload/v1720423404/nangchay/logo_footer.png)] bg-cover bg-no-repeat relative z-[91]' />
                     <span className="flex w-[316px] h-[50px] justify-start items-start self-stretch shrink-0 font-['SVN-Averia_Serif_Libre'] text-[20px] font-light leading-[25.254px] text-[#fff] relative text-left z-[92]">
                         Nếu có thắc mắc, bạn hãy lại lời nhắn cho Nàng Chay tại đây!
                     </span>
