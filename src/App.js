@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Navigation from "./components/Navigation";
 import Banner from "./components/Banner";
 import ScrollToTopButton from './components/ScrollToTop/ScrollToTop';
@@ -15,14 +15,15 @@ function App() {
       duration: 500, // Thời gian hiệu ứng (ms)
     });
   }, []);
-  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    // Giả sử bạn đang tải dữ liệu từ API hoặc tài nguyên bên ngoài
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 5000); // Thời gian giả lập tải dữ liệu
-  }, []);
+  // const [isLoading, setIsLoading] = useState(true);
+
+  // useEffect(() => {
+  //   // Giả sử bạn đang tải dữ liệu từ API hoặc tài nguyên bên ngoài
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 5000); // Thời gian giả lập tải dữ liệu
+  // }, []);
 
   return (
     <div className="main-container w-screen h-screen relative mx-auto my-0">
@@ -43,26 +44,26 @@ function App() {
         </div>
       ) : (
         <> */}
-          <Navigation />
-          <Banner />
-          <div data-aos="fade-up" id='slogan' className='bg-[#fff] w-full mx-auto h-[72px] sm:h-[80px] md:h-[200px] lg:h-[300px] relative left-0 overflow-hidden z-[27]'>
-            <LazyLoadImage
-              src="https://res.cloudinary.com/nangchay/image/upload/v1720423404/nangchay/slogan.png"
-              alt="Slogan"
-              className="object-cover object-cover-center w-full h-full"
-            />
-            <div className="container absolute inset-0 flex items-center justify-center text-white text-center">
-              <p data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500" className="font-['SVN-Averia_Serif_Libre'] text-[20px] md:text-[48px] font-light">
-                Nàng Chay bán câu chuyện, bạn có sẵn sàng lắng nghe?
-              </p>
-            </div>
-          </div>
-          <About />
-          <Value />
-          <FAQs />
-          <Footer />
-          <ScrollToTopButton />
-        {/* </>
+      <Navigation />
+      <Banner />
+      <div data-aos="fade-up" id='slogan' className='bg-[#fff] w-full mx-auto h-[72px] sm:h-[80px] md:h-[200px] lg:h-[300px] relative left-0 overflow-hidden z-[27]'>
+        <LazyLoadImage
+          src="https://res.cloudinary.com/nangchay/image/upload/v1720423404/nangchay/slogan.png"
+          alt="Slogan"
+          className="object-cover object-cover-center w-full h-full"
+        />
+        <div className="container absolute inset-0 flex items-center justify-center text-white text-center">
+          <p data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500" className="font-['SVN-Averia_Serif_Libre'] text-[20px] md:text-[48px] font-light">
+            Nàng Chay bán câu chuyện, bạn có sẵn sàng lắng nghe?
+          </p>
+        </div>
+      </div>
+      <About />
+      <Value />
+      <FAQs />
+      <Footer />
+      <ScrollToTopButton />
+      {/* </>
      )} */}
     </div>
   );
