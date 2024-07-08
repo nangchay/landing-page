@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="main-container w-screen h-screen relative mx-auto my-0">
-      {isLoading ? (
+      {/* {isLoading ? (
         <div className="conaitner w-full h-full flex flex-row justify-center items-center bg-[#f8f4e3] relative">
           <div className="flex justify-center items-center w-[100px] h-[80px] bg-[url(https://res.cloudinary.com/nangchay/image/upload/v1720423404/nangchay/logo.png)] bg-center bg-cover bg-no-repeat relative"></div>
           <div className="flip-animation font-['SVN-Averia_Serif_Libre'] text-4xl font-light text-[#6b8439]">
@@ -42,7 +42,7 @@ function App() {
           </div>
         </div>
       ) : (
-        <>
+        <> */}
           <Navigation />
           <Banner />
           <div data-aos="fade-up" id='slogan' className='bg-[#fff] w-full mx-auto h-[72px] sm:h-[80px] md:h-[200px] lg:h-[300px] relative left-0 overflow-hidden z-[27]'>
@@ -62,8 +62,8 @@ function App() {
           <FAQs />
           <Footer />
           <ScrollToTopButton />
-        </>
-      )}
+        {/* </>
+     )} */}
     </div>
   );
 }
