@@ -76,19 +76,33 @@ const Value = () => {
                 </div>
 
                 <div className="flex flex-col gap-[12px] items-center grow shrink-0 basis-0 flex-nowrap relative mb-4 -z[59]">
-                    <div className="w-[325px] h-[400px] shrink-0 bg-[url('https://res.cloudinary.com/nangchay/image/upload/v1720423404/nangchay/oil10.png')] bg-cover bg-no-repeat rounded-[8px] hover:border-2 hover:border-[#b77f5d] transition-all duration-1000 ease-in-out relative" />
+                    <div className="w-[325px] h-[400px] shrink-0 bg-[url('https://res.cloudinary.com/nangchay/image/upload/v1726118877/nangchay/mascara.jpg')] bg-cover bg-no-repeat rounded-[8px] hover:border-2 hover:border-[#b77f5d] transition-all duration-1000 ease-in-out relative" />
                     <span className="h-[20px] self-stretch shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#707070] relative text-center whitespace-nowrap">
                         Dầu dừa dưỡng mi
                     </span>
                     <span className="h-[20px] self-stretch shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#707070] relative text-center whitespace-nowrap">
                         Eyelash Virgin Coconut Oil
                     </span>
-                    <button onClick={openModal} className="flex w-[100px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#fff] hover:bg-slate-100 rounded-[8px] border-solid border border-[#323232] relative pointer">
+                    <div className="flex w-[100px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#fff] hover:bg-slate-100 rounded-[8px] border-solid border border-[#323232] relative pointer">
                         <span className="flex w-[56px] h-[20px] justify-center items-center shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#6b8439] relative text-center whitespace-nowrap z-[64]">
-                            Liên hệ
+                            39,000đ
                         </span>
-                    </button>
-                    <Modal isOpen={isModalOpen} onClose={closeModal} />
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-[12px] items-center grow shrink-0 basis-0 flex-nowrap relative mb-4 -z[59]">
+                    <div className="w-[325px] h-[400px] shrink-0 bg-[url('https://res.cloudinary.com/nangchay/image/upload/v1726118809/nangchay/lippalm.jpg')] bg-cover bg-no-repeat rounded-[8px] hover:border-2 hover:border-[#b77f5d] transition-all duration-1000 ease-in-out relative" />
+                    <span className="h-[20px] self-stretch shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#707070] relative text-center whitespace-nowrap">
+                        Son dưỡng dầu dừa
+                    </span>
+                    <span className="h-[20px] self-stretch shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#707070] relative text-center whitespace-nowrap">
+                        Coconut Oil Lip Palm
+                    </span>
+                    <div className="flex w-[100px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#fff] hover:bg-slate-100 rounded-[8px] border-solid border border-[#323232] relative pointer">
+                        <span className="flex w-[56px] h-[20px] justify-center items-center shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#6b8439] relative text-center whitespace-nowrap z-[64]">
+                            59,000đ
+                        </span>
+                    </div>
                 </div>
             </div>
 
