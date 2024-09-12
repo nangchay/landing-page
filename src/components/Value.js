@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Modal from './Modal';
+// import Modal from './Modal';
 import AOS from 'aos';
 
 const Value = () => {
@@ -9,15 +9,15 @@ const Value = () => {
         });
     }, []);
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    // const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const openModal = () => {
-        setIsModalOpen(true);
-    };
+    // const openModal = () => {
+    //     setIsModalOpen(true);
+    // };
 
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
+    // const closeModal = () => {
+    //     setIsModalOpen(false);
+    // };
 
     return (
         <div id='value' className='w-screen mx-auto bg-[#f8f4e3] relative overflow-hidden z-[33] mt-0 mb-0 py-8 md:py-16 z-[38]'>
