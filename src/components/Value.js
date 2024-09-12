@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 // import Modal from './Modal';
 import AOS from 'aos';
 
