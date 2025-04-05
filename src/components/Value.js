@@ -85,7 +85,7 @@ const Value = () => {
                         </span>
                         <div className="flex w-[100px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#fff] rounded-[8px] border-solid border border-[#323232] relative pointer z-[51]">
                             <span className="flex w-[56px] h-[20px] justify-center items-center shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#6b8439] relative text-center whitespace-nowrap z-[52]">
-                                90,000đ
+                                79,000đ
                             </span>
                         </div>
                     </div>
@@ -93,14 +93,29 @@ const Value = () => {
                     <div className="flex flex-col gap-[12px] items-center grow shrink-0 basis-0 flex-nowrap relative mb-4 z-[53]">
                         <div className="w-[325px] h-[400px] shrink-0 bg-[url('https://res.cloudinary.com/nangchay/image/upload/v1720423404/nangchay/oil350.png')] bg-cover bg-no-repeat rounded-[8px] hover:border-2 hover:border-[#b77f5d] transition-all duration-1000 ease-in-out relative" />
                         <span className="h-[20px] self-stretch shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#707070] relative text-center whitespace-nowrap">
-                            Dầu dừa ép lạnh 350ml
+                            Dầu dừa ép lạnh 500ml
                         </span>
                         <span className="h-[20px] self-stretch shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#707070] relative text-center whitespace-nowrap">
-                            Cold-Pressed Virgin Coconut Oil 350ml
+                            Cold-Pressed Virgin Coconut Oil 500ml
                         </span>
                         <div className="flex w-[100px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#fff] rounded-[8px] border-solid border border-[#323232] relative pointer">
                             <span className="flex w-[56px] h-[20px] justify-center items-center shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#6b8439] relative text-center whitespace-nowrap">
-                                220,000đ
+                                179,000đ
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col gap-[12px] items-center grow shrink-0 basis-0 flex-nowrap relative mb-4 -z[59]">
+                        <div className="w-[325px] h-[400px] shrink-0 bg-[url('https://res.cloudinary.com/nangchay/image/upload/v1726118877/nangchay/mathoadua.jpg')] bg-cover bg-no-repeat rounded-[8px] hover:border-2 hover:border-[#b77f5d] transition-all duration-1000 ease-in-out relative" />
+                        <span className="h-[20px] self-stretch shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#707070] relative text-center whitespace-nowrap">
+                            Mật hoa dừa Nàng Chay 250g
+                        </span>
+                        <span className="h-[20px] self-stretch shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#707070] relative text-center whitespace-nowrap">
+                            Mật hoa dừa Nàng Chay 250g
+                        </span>
+                        <div className="flex w-[100px] pt-[10px] pr-[10px] pb-[10px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#fff] hover:bg-slate-100 rounded-[8px] border-solid border border-[#323232] relative pointer">
+                            <span className="flex w-[56px] h-[20px] justify-center items-center shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#6b8439] relative text-center whitespace-nowrap z-[64]">
+                                129,000đ
                             </span>
                         </div>
                     </div>
