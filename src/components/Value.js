@@ -106,7 +106,7 @@ const Value = () => {
                     </div>
 
                     <div className="flex flex-col gap-[12px] items-center grow shrink-0 basis-0 flex-nowrap relative mb-4 -z[59]">
-                        <div className="w-[325px] h-[400px] shrink-0 bg-[url('https://res.cloudinary.com/nangchay/image/upload/v1726118877/nangchay/mathoadua.jpg')] bg-cover bg-no-repeat rounded-[8px] hover:border-2 hover:border-[#b77f5d] transition-all duration-1000 ease-in-out relative" />
+                        <div className="w-[325px] h-[400px] shrink-0 bg-[url('https://res.cloudinary.com/nangchay/image/upload/v1743868078/mathoadua_eebqh1.jpg')] bg-cover bg-no-repeat rounded-[8px] hover:border-2 hover:border-[#b77f5d] transition-all duration-1000 ease-in-out relative" />
                         <span className="h-[20px] self-stretch shrink-0 basis-auto font-['SVN-Averia_Serif_Libre'] text-[16px] font-bold leading-[20px] text-[#707070] relative text-center whitespace-nowrap">
                             Mật hoa dừa Nàng Chay 250g
                         </span>
